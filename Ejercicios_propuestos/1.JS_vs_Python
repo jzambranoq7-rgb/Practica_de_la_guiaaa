@@ -1,0 +1,138 @@
+# ==========================================
+# EJERCICIOS PROPUESTOS
+# ==========================================
+
+# ==========================================
+# Ejercicio 1: Pide una temperatura en grados Celsius y muéstrala en Fahrenheit. Fórmula: F = C x 9/5 + 32
+# ==========================================
+# ENTRADA: Temperatura (float)
+# PROCESO: F = (Temperatura * 9 / 5) + 32
+# SALIDA:  Temperatura convertida a grados Fahrenheit
+# ==========================================
+
+Temperatura = float(input('Ingrese la temperatura en grados celsius para convertirla a grados Fahrenheit: '))
+
+F = (Temperatura * 9 / 5) + 32
+
+print(f'La temperatura en grados Fahrenheit es: {F}')
+
+# ==========================================
+# Ejercicio de práctica (modificado): Pide una temperatura en Fahrenheit y conviértela a Celsius y Kelvin, guardando los resultados en un diccionario.
+# ==========================================
+# ENTRADA: temp_f (float)
+# PROCESO: celsius = (temp_f - 32) * 5 / 9 | kelvin = celsius + 273.15, almacenar en diccionario
+# SALIDA:  Temperaturas convertidas a Celsius y Kelvin con 2 decimales
+# ==========================================
+
+temp_f = float(input('Ingrese la temperatura en grados Fahrenheit: '))
+
+celsius = (temp_f - 32) * 5 / 9
+kelvin = celsius + 273.15
+
+escalas = {
+    "Celsius": round(celsius, 2),
+    "Kelvin": round(kelvin, 2)
+}
+
+print(f"Conversiones: {escalas['Celsius']} °C | {escalas['Kelvin']} K")
+
+
+# ==========================================
+# Ejercicio 2: Pide un total de segundos y muéstralos como HH:MM:SS- Ej: 3275 segundos -> 01:02:05.
+# ==========================================
+# ENTRADA: seconds (int)
+# PROCESO: horas = seconds // 3600 | resto = seconds % 3600 | minutos = resto // 60 | segundos = resto % 60
+# SALIDA:  Tiempo formateado en HH:MM:SS
+# ==========================================
+
+seconds = int(input("Ingrese el tiempo en segundos: "))
+horas = seconds // 3600
+resto = seconds % 3600
+minutos = resto // 60
+segundos = resto % 60
+
+print(f"{horas:02d}:{minutos:02d}:{segundos:02d}")
+
+# ==========================================
+# Ejercicio de práctica (modificado): Pide horas, minutos y segundos por separado y calcula el total consolidado en segundos.
+# ==========================================
+# ENTRADA: h (int), m (int), s (int)
+# PROCESO: total_seg = (h * 3600) + (m * 60) + s
+# SALIDA:  Total acumulado en segundos
+# ==========================================
+
+h = int(input("Ingrese horas: "))
+m = int(input("Ingrese minutos: "))
+s = int(input("Ingrese segundos: "))
+
+total_seg = (h * 3600) + (m * 60) + s
+
+print(f"El tiempo total acumulado es: {total_seg} segundos")
+
+
+# ==========================================
+# Ejercicio 3: Lee dos números y muéstralos intercambiados. Python permite hacerlo en una sola línea, muy diferente a JS.
+# ==========================================
+# ENTRADA: a (int), b (int)
+# PROCESO: Intercambiar valores mediante asignación múltiple: a, b = b, a
+# SALIDA:  Valores invertidos de las variables a y b
+# ==========================================
+
+a = int(input("a: "))
+b = int(input("b: "))
+
+a, b = b, a
+
+print(f"a = {a}, b = {b}")
+
+# ==========================================
+# Ejercicio de práctica (modificado): Lee tres variables (x, y, z) y realiza una rotación circular de valores (x pasa a y, y a z, z a x) usando asignación múltiple.
+# ==========================================
+# ENTRADA: x (int), y (int), z (int)
+# PROCESO: Intercambio múltiple simultáneo x, y, z = z, x, y
+# SALIDA:  Valores rotados de las tres variables
+# ==========================================
+
+x = int(input("x: "))
+y = int(input("y: "))
+z = int(input("z: "))
+
+print(f"Valores iniciales: x={x}, y={y}, z={z}")
+
+x, y, z = z, x, y
+
+print(f"Valores tras rotación circular: x={x}, y={y}, z={z}")
+
+
+# ==========================================
+# Ejercicio 4: Lee el precio de un producto sin IVA y muestra el IVA (15%) y el total.
+# ==========================================
+# ENTRADA: precio (float)
+# PROCESO: iva = precio * 0.15 | total = precio + iva
+# SALIDA:  Monto del IVA y precio final formateados con 2 decimales
+# ==========================================
+
+IVA = 0.15
+
+precio = float(input("Precio sin IVA: $"))
+iva = precio * IVA
+total = precio + iva
+
+print(f"IVA:   ${iva:.2f}")
+print(f"Total: ${total:.2f}")
+
+# ==========================================
+# Ejercicio de práctica (modificado): Lee el precio total con IVA incluido (15%) y desglosa el precio base (subtotal) y el valor exacto del impuesto.
+# ==========================================
+# ENTRADA: total_con_iva (float)
+# PROCESO: subtotal = total_con_iva / 1.15 | valor_iva = total_con_iva - subtotal
+# SALIDA:  Subtotal sin impuesto y monto del IVA desglosado a 2 decimales
+# ==========================================
+
+total_con_iva = float(input("Ingrese el total pagado con IVA incluido: $"))
+
+subtotal = total_con_iva / 1.15
+valor_iva = total_con_iva - subtotal
+
+print(f"Subtotal neto: ${subtotal:.2f}")
+print(f"IVA incluido:  ${valor_iva:.2f}")
